@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+
+  applicaciones:
+
+  proxy:
+
+  cache:
+
+  bd:
+
+  bc:
