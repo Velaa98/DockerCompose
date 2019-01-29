@@ -1,6 +1,6 @@
 # Docker Compose
 
-## Realiza en el grupo asignado en clase un despliegue completo utilizando docker-compose con los siguientes requisitos:
+#### Realiza en el grupo asignado en clase un despliegue completo utilizando docker-compose con los siguientes requisitos:
 
 - Repositorio común con commits significativos repartidos en el tiempo
 - Componentes mínimos (uno por contenedor):
