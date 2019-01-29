@@ -1,2 +1,0 @@
-# TareaDocker
-Tarea grupal docker
