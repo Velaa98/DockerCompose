@@ -8,8 +8,14 @@ services:
 
   cache:
 
-  bd:
-
+  mariadb:
+    volumes:
+      - ./volumen:/var/lib/mysql
+    enviroment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: prueba
+      MYSQL_PASSWORD: prueba
+      MYSQL_DATABASE: prueba
   bc:
 
 volumes:
