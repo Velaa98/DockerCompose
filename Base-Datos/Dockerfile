@@ -5,4 +5,3 @@ FROM ubuntu:bionic
 #    RUN set -ex; \
 
 EXPOSE 3306
-
