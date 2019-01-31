@@ -7,7 +7,7 @@ tee /etc/varnish/default.vcl <<EOF
 vcl 4.0;
 
 backend default {
-    .host = nginx_server;
+    .host = nginx;
     .port = "8080";
 }
 EOF
