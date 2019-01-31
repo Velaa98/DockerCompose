@@ -1,6 +1,18 @@
 version: '3'
 services:
   web:
+    image: nginx
+    ports:
+      - "8080:80"
+    links:
+      - varnish
+    volumes:
+      - ./config/nginx/default:/etc/nginx/conf.d/default.conf
+      - ./config/nginx/logs/nginx-error.log:/var/log/nginx/error.log
+      - ./config/nginx/logs/nginx-access.log:/var/log/nginx/access.log
+      - ./html:/var/www/html
+    container_name: nginx
+    restart: always
 
   applicaciones:
 
