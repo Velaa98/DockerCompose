@@ -3,6 +3,6 @@ FROM ubuntu:bionic
           apt update && apt install -y mariadb-server; \
           apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENV PRUEBA="PRUEBA"
+COPY config.sh /tmp/config.sh
 
-CMD ["mysqld"]
+CMD ["/tmp/config.sh"]

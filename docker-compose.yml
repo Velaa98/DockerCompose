@@ -43,9 +43,8 @@ services:
     volumes:
       - ./volumen:/var/lib/mysql
     enviroment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=prueba
-      - MYSQL_PASSWORD=prueba
-      - MYSQL_DATABASE=prueba_db
+      - MARIADB_USER=prueba
+      - MARIADB_PASSWORD=prueba
+      - MARIADB_DATABASE=prueba_db
 
   bc:
