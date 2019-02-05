@@ -30,15 +30,22 @@ services:
     restart: unless-stopped
 
   cache:
+    build:
+      dockerfile: ./Cache-Base-Datos/Dockerfile
+    enviroment:
+      - memcached_port=
+      - memcached_maxmem=
+      - memcached_listen=
 
   mariadb:
+    build:
+      dockerfile: ./Base-Datos/Dockerfile
     volumes:
       - ./volumen:/var/lib/mysql
     enviroment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: prueba
-      MYSQL_PASSWORD: prueba
-      MYSQL_DATABASE: prueba
-  bc:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=prueba
+      - MYSQL_PASSWORD=prueba
+      - MYSQL_DATABASE=prueba_db
 
-volumes:
+  bc:
