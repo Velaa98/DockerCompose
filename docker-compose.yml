@@ -17,6 +17,17 @@ services:
   applicaciones:
 
   proxy:
+    build:
+    context: .
+      dockerfile: ./Proxy-Inverso/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - nginx
+    links:
+      - nginx
+    container_name: varnish
+    restart: unless-stopped
 
   cache:
 
