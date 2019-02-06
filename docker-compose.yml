@@ -47,4 +47,20 @@ services:
       - MARIADB_PASSWORD=prueba
       - MARIADB_DATABASE=prueba_db
 
-  bc:
+  appserver:
+    build:
+      dockerfile: .Servidor-Aplicaciones/Dockerfile
+    links:
+      - cache
+      - nginx
+    environment:
+      MYSQL_HOST: cache
+      MYSQL_DATABASE: nextcloud
+      MYSQL_USER: nextcloud
+      MYSQL_PASSWORD: nextcloud
+    depends_on:
+      - cache
+      - mariadb
+      - nginx
+    container_name: nextcloud
+       
