@@ -30,12 +30,9 @@ services:
     restart: unless-stopped
 
   cache:
-    build:
-      dockerfile: ./Cache-Base-Datos/Dockerfile
+    image: bitnami/memcached
     enviroment:
-      - memcached_port=
-      - memcached_maxmem=
-      - memcached_listen=
+      - MEMCACHED_CACHE_SIZE=64
 
   mariadb:
     image: bitnami/mariadb
