@@ -51,15 +51,14 @@ services:
     build:
       dockerfile: .Servidor-Aplicaciones/Dockerfile
     links:
-      - cache
+      - mariadb
       - nginx
     environment:
-      MYSQL_HOST: cache
-      MYSQL_DATABASE: nextcloud
-      MYSQL_USER: nextcloud
-      MYSQL_PASSWORD: nextcloud
+      MARIADB_HOST: mariadb
+      MARIADB_DATABASE: nextcloud
+      MARIADB_USER: nextcloud
+      MARIADB_PASSWORD: nextcloud
     depends_on:
-      - cache
       - mariadb
       - nginx
     container_name: nextcloud
