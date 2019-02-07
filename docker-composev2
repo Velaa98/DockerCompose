@@ -35,6 +35,16 @@ services:
     depends_on:
       - app
 
+  proxy:
+    build: ./Proxy-Inverso
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+    links:
+      - web
+    restart: unless-stopped
+
 volumes:
   db:
   nextcloud:
