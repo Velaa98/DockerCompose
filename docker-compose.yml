@@ -38,14 +38,14 @@ services:
       - memcached_listen=
 
   mariadb:
-    build:
-      dockerfile: ./Base-Datos/Dockerfile
+    image: bitnami/mariadb
     volumes:
-      - ./volumen:/var/lib/mysql
+      - ./volumenes/mariadb:/var/lib/mysql
     enviroment:
-      - MARIADB_USER=prueba
-      - MARIADB_PASSWORD=prueba
-      - MARIADB_DATABASE=prueba_db
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_USER=nextcloud
+      - MARIADB_PASSWORD=nextcloud
+      - MARIADB_DATABASE=nextcloud_db
 
   appserver:
     build:
