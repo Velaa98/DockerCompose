@@ -9,6 +9,9 @@ services:
       - db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=secret
 
   app:
     image: nextcloud:fpm
@@ -19,9 +22,10 @@ services:
       - nextcloud:/var/www/html
     environment:
       - MYSQL_HOST=db
-      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=secret
     depends_on:
       - db
 
@@ -29,7 +33,7 @@ services:
     build: ./web
     restart: always
     ports:
-      - 8080:80
+      - "8080:80"
     volumes:
       - nextcloud:/var/www/html:ro
     depends_on:
